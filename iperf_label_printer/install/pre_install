@@ -1,0 +1,15 @@
+# disable auto update and upgrade
+sudo vi /etc/apt/apt.conf.d/20auto-upgrades
+
+
+sudo apt install cups cups-bsd python3-pip
+sudo usermod -aG lpadmin odroid
+
+python3 -m pip install zebra cups psutil
+
+#check printer
+lpinfo -v
+
+lpstat -v
+lpadmin -p zebra -E -v usb://Zebra%20Technologies/ZTC%20GC420d%20\(EPL\)
+lpstat -v

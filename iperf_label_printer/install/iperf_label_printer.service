@@ -1,0 +1,14 @@
+[Unit]
+Description=ODROID-HC4 agent for jig
+After=syslog.target
+
+[Service]
+Type=simple
+User=odroid
+WorkingDirectory=/home/odroid/iperf_label_printer
+ExecStart=/usr/bin/screen -L -DmS agent python3 iperf_socket_server.py
+ExecStartPre=/bin/sleep 10
+
+[Install]
+WantedBy=multi-user.target
+#WantedBy=default.target

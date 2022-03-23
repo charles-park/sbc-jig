@@ -1,0 +1,1 @@
+KERNEL=="efuse", MODE="660", GROUP="odroid"

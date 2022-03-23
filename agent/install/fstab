@@ -1,0 +1,3 @@
+UUID="e27ff390-3d53-40d8-827d-bc37ad13f21a" /     ext4 rw,relatime,data=ordered 0 0
+UUID="26506952-5757-478c-b4f0-76cf3246f46c" /boot ext2 rw,relatime,errors=continue 0 0
+tmpfs /home/odroid/ramdisk tmpfs nodev,nosuid,noexec,nodiratime,size=500M 0 0

@@ -1,0 +1,53 @@
+sudo apt install ssh git screen iperf3
+sudo apt install python3-pip python3.8 python3.8-dev python3-distutils
+sudo apt install libfreetype6-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libportmidi-dev
+
+python3 -m pip install --upgrade pip --user
+python3 -m pip install -r requirements.txt --user
+
+cat 10-odroid.rules | sudo tee -a /etc/udev/rules.d/10-odroid.rules
+sudo usermod -aG dialout odroid
+sudo usermod -aG i2c odroid
+sudo usermod -aG disk odroid
+sudo usermod -aG input odroid
+sudo usermod -aG kmem odroid
+
+# disable usb automount
+sudo systemctl stop udisks2
+sudo systemctl mask udisks2
+
+# diable apt daily update
+sudo systemctl stop apt-daily-upgrade
+sudo systemctl stop apt-daily
+sudo systemctl disable apt-daily-upgrade
+sudo systemctl disable apt-daily
+
+sudo cp 99-efuse.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger /dev/efuse
+
+cp config.ini ~/.kivy/
+
+sudo cp 60-lightdm-gtk-greeter.conf /usr/share/lightdm/lightdm.conf.d/
+sudo cp agent.service /etc/systemd/system/
+sudo systemctl enable agent
+sudo systemctl start agent
+
+
+sudo apt install overlayroot
+sudo update-initramfs -c -k $(uname -r)
+sudo mkimage -A arm64 -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-$(uname -r) /media/boot/uInitrd
+
+
+
+# iperf
+# disable auto update and upgrade
+sudo vi /etc/apt/apt.conf.d/20auto-upgrades
+
+1 -> 0
+
+# remove iperf and libiperf
+sudo apt remove --purge libiperf0 iperf3
+
+sudo dpkg -i iperf3_3.1.3-1_arm64.deb
+sudo dpkg -i libiperf0_3.1.3-1_arm64.deb

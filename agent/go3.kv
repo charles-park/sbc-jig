@@ -1,0 +1,210 @@
+<Debug>:
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .05]
+        BackgroundLabel2:
+            id: name
+            text: 'CH'
+            size_hint: [.25, 1]
+        BackgroundLabel:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.3, 1]
+        BackgroundLabel:
+            id: uart
+            text: 'UART'
+            size_hint: [.45, 1]
+
+<Channel>:
+    name: name
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .05]
+        BackgroundLabel2:
+            id: name
+            text: 'CH'
+            size_hint: [.25, 1]
+        BackgroundLabel:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.3, 1]
+        BackgroundLabel:
+            id: uart
+            text: 'UART'
+            size_hint: [.45, 1]
+
+    StackLayout:
+        size_hint: [1, .95]
+        orientation: 'lr-tb'
+
+        BoxLayout:
+            size_hint: [.25, .25]
+            orientation: 'vertical'
+            BackgroundLabel2:
+                text: 'BAT'
+            BackgroundLabel2:
+                text: 'DC_IN'
+            BackgroundLabel2:
+                text: 'USB2'
+        BoxLayout:
+            size_hint: [.3, .25]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: battery
+                text: 'None'
+            BackgroundLabel:
+                id: dc
+                text: 'None'
+            BackgroundLabel:
+                id: usb2
+                text: 'None'
+
+        BackgroundButton:
+            size_hint: [.45, .25]
+            id: finish
+            font_size: 62
+            text: 'FINISH'
+            on_release: root.check_all('finish')
+
+        BackgroundLabel2:
+            text: 'LED'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_sys
+            font_size: 25
+            text: 'SYS'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_pwr
+            font_size: 25
+            text: 'PWR'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_chg
+            font_size: 25
+            text: 'CHG'
+            size_hint: [.25, .1]
+
+
+        BackgroundLabel2:
+            text: 'KEYPAD'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: keypad
+            font_size: 25
+            text: 'None'
+            size_hint: [.75, .1]
+
+        BackgroundLabel2:
+            text: 'PIN10'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: pin10
+            font_size: 25
+            text: 'None'
+            size_hint: [.75, .1]
+
+        BackgroundButton:
+            font_size: 25
+            text: 'AUDIO'
+            id: btn_audio
+            size_hint: [.25, .1]
+            background_color: 1, 1, 1, .9
+            on_release: root.check_audio()
+        BackgroundLabel:
+            id: audio
+            font_size: 25
+            text: 'None'
+            size_hint: [.45, .1]
+        BackgroundLabel:
+            id: hp_det
+            text: 'HP_DET'
+            font_size: 25
+            size_hint: [.3, .1]
+
+        BackgroundButton:
+            font_size: 20
+            text: 'JOYSTICK'
+            id: btn_joystick
+            background_color: 1, 1, 1, .9
+            on_release: root.check_joystick()
+            size_hint: [.25, .1]
+        Switch:
+            id: sw_joystick
+            active: False
+            on_active: root.switch_callback(self.active)
+            size_hint: [.2, .1]
+        BackgroundLabel:
+            id: joystick
+            text: 'None'
+            font_size: 25
+            size_hint: [.55, .1]
+
+        BoxLayout:
+            size_hint: [.25, .15]
+            orientation: 'vertical'
+            BackgroundButton:
+                on_release: root.check_btn_sw()
+                text: 'BTN_SW'
+                id: btn_sw
+                background_color: 1, 1, 1, .9
+        BoxLayout:
+            size_hint: [.1875, .15]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: TL2
+                font_size: 20
+                text: 'TL2'
+            BackgroundLabel:
+                id: TL
+                font_size: 20
+                text: 'TL'
+
+        BoxLayout:
+            size_hint: [.1875, .15]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: V_DOWN
+                font_size: 20
+                text: 'V_DN'
+            BackgroundLabel:
+                id: F1
+                font_size: 25
+                text: 'F1'
+
+        BoxLayout:
+            size_hint: [.1875, .15]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: V_UP
+                font_size: 20
+                text: 'V_UP'
+            BackgroundLabel:
+                id: F2
+                font_size: 25
+                text: 'F2'
+
+        BoxLayout:
+            size_hint: [.1875, .15]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: TR2
+                font_size: 20
+                text: 'TR2'
+            BackgroundLabel:
+                id: TR
+                font_size: 20
+                text: 'TR'
+
+        BackgroundButton:
+            size_hint: [.45, .1]
+            text: 'BTN_FLASH'
+            id: btn_flash
+            background_color: 1, 1, 1, .9
+            on_release: root.check_btn_flashrom()
+        BackgroundLabel:
+            size_hint: [.55, .1]
+            id: btn_flashrom
+            text: 'None'
+            font_size: 25

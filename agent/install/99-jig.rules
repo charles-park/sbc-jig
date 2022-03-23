@@ -1,0 +1,2 @@
+KERNEL=="efuse", MODE="660", GROUP="odroid"
+KERNEL=="ttyS0", MODE="660", GROUP="odroid"

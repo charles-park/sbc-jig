@@ -1,0 +1,14 @@
+[Unit]
+Description=ODROID-M1 40pin test
+After=syslog.target
+
+[Service]
+Type=simple
+User=odroid
+WorkingDirectory=/home/odroid/sbc-jig/40pin_test
+ExecStart=/usr/bin/screen -L -DmS 40pin ./run_40pin_test.sh
+#ExecStartPre=/bin/sleep 15
+
+[Install]
+WantedBy=multi-user.target
+#WantedBy=default.target

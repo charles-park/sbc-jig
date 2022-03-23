@@ -1,0 +1,5 @@
+# GPIO Mem
+SUBSYSTEM=="gpio", KERNEL=="gpiochip*", GROUP="odroid", MODE="0660"
+
+# GPIO Mem
+SUBSYSTEM=="i2c", GROUP="odroid", MODE="0660"

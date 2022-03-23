@@ -1,0 +1,14 @@
+[Unit]
+Description=ODROID-HC4 agent for jig
+After=syslog.target
+
+[Service]
+Type=simple
+User=odroid
+WorkingDirectory=/home/odroid/sbc-jig/agent
+ExecStart=/usr/bin/screen -L -DmS agent python3 agent.py
+ExecStartPre=/bin/sleep 10
+
+[Install]
+WantedBy=multi-user.target
+#WantedBy=default.target

@@ -1,0 +1,182 @@
+<Channel>:
+    name: name
+    onoff: onoff
+    uuid: uuid
+    uart: uart
+    ipaddr: ipaddr
+    usb2: usb2
+    eth_speed: eth_speed
+    iperf: iperf
+    sata_r0: sata_r0
+    sata_w0: sata_w0
+    sata_r1: sata_r1
+    sata_w1: sata_w1
+    mnt0: mnt0
+    mnt1: mnt1
+    lspci: lspci
+
+    gpio: gpio
+    led_sys: led_sys
+    led_eth: led_eth
+    led_hdd: led_hdd
+    hdmi: hdmi
+    finish: finish
+    btn_iperf: btn_iperf
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .08]
+        BackgroundLabel:
+            id: name
+            text: 'CH'
+            size_hint: [.2, 1]
+        BackgroundLabel:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.2, 1]
+        BackgroundLabel:
+            id: uart
+            text: 'UART'
+            size_hint: [.6, 1]
+
+    StackLayout:
+        size_hint: [1, .8]
+        orientation: 'lr-tb'
+
+        BackgroundLabel:
+            text: 'IP'
+            color: 0, 0, 0, 0
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: ipaddr
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundButton:
+            text: 'MAC'
+            background_color: 1, 1, 1, .9
+            on_release: root.check_uuid()
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: uuid
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundLabel:
+            text: 'USB2'
+            color: 0, 0, 0, 0
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: usb2
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundLabel:
+            text: 'ETH'
+            color: 0, 0, 0, 0
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: eth_speed
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundButton:
+            id: btn_iperf
+            text: 'IPERF'
+            background_color: 1, 1, 1, .9
+            on_release: root.check_iperf()
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: iperf
+            font_size: 25
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundLabel:
+            text: 'GPIO'
+            color: 0, 0, 0, 0
+            size_hint: [.3, .1]
+        BackgroundLabel:
+            id: gpio
+            font_size: 25
+            text: 'None'
+            size_hint: [.7, .1]
+
+        BackgroundLabel:
+            text: 'GPIO_HDMI'
+            size_hint: [.4, .1]
+            color: 0, 0, 0, 0
+        BackgroundLabel:
+            id: hdmi
+            text: 'None'
+            size_hint: [.6, .1]
+
+        BoxLayout:
+            size_hint: [.1, .2]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: lspci
+                text: 'PCI'
+        BoxLayout:
+            size_hint: [.1, .2]
+            orientation: 'vertical'
+            BackgroundLabel:
+                text: 'CH0'
+                color: 0, 0, 0, 0
+            BackgroundLabel:
+                text: 'CH1'
+                color: 0, 0, 0, 0
+        BoxLayout:
+            size_hint: [.2, .2]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: mnt0
+                text: '0'
+            BackgroundLabel:
+                id: mnt1
+                text: '0'
+        BoxLayout:
+            size_hint: [.3, .2]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_r0
+                text: '0'
+            BackgroundLabel:
+                id: sata_r1
+                text: '0'
+        BoxLayout:
+            size_hint: [.3, .2]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_w0
+                text: '0'
+            BackgroundLabel:
+                id: sata_w1
+                text: '0'
+
+        BackgroundLabel:
+            text: 'LED'
+            color: 0, 0, 0, 0
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_sys
+            font_size: 25
+            text: 'SYS'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_eth
+            font_size: 25
+            text: 'ETH'
+            size_hint: [.25, .1]
+        BackgroundLabel:
+            id: led_hdd
+            font_size: 25
+            text: 'HDD'
+            size_hint: [.25, .1]
+
+
+    BackgroundLabel:
+        id: finish
+        text: 'FINISH'
+        size_hint: [1, .1]
+

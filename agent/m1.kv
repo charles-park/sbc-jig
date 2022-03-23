@@ -1,0 +1,210 @@
+<Channel>:
+    name: name
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .1]
+        BackgroundLabel2:
+            id: name
+            text: 'CH'
+            size_hint: [.2, 1]
+        BackgroundButton:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.3, 1]
+
+    StackLayout:
+        size_hint: [1, .9]
+        orientation: 'lr-tb'
+
+        BackgroundLabel2:
+            text: 'PRINTER'
+            size_hint: [.2, .1]
+        BackgroundButton:
+            text: 'SCAN'
+            on_release: root.scan_iperf_server()
+            size_hint: [.15, .1]
+        BackgroundLabel:
+            text: 'PING'
+            id: ping_printer
+            size_hint: [.15, .1]
+        TextInput:
+            id: ipaddr_printer
+            input_type: 'number'
+            font_size: 32
+            bold: True
+            size_hint: [.5, .1]
+            multiline: False
+            halign: 'center'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: [.2, .16]
+            BackgroundLabel2:
+                text: 'USB2'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: [.3, .16]
+            BackgroundLabel:
+                id: usb2_up
+                text: 'None'
+            BackgroundLabel:
+                id: usb2_down
+                text: 'None'
+        BackgroundLabel:
+            size_hint: [.3, .16]
+            id: spi_btn
+            font_size: 58
+            text: 'SPI_BTN'
+        BackgroundLabel2:
+            size_hint: [.2, .16]
+            id: finish
+            font_size: 58
+            text: 'FINISH'
+
+        BoxLayout:
+            size_hint: [.2, .16]
+            orientation: 'vertical'
+            BackgroundButton:
+                text: 'USB3'
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_speed
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_speed
+                text: 'None'
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_sdx
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_sdx
+                text: 'None'
+        BoxLayout:
+            size_hint: [.3, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_rw
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_rw
+                text: 'None'
+        BoxLayout:
+            size_hint: [.2, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_diff
+                text: 'CMP'
+            BackgroundLabel:
+                id: usb3_down_diff
+                text: 'CMP'
+
+        BoxLayout:
+            size_hint: [.2, .16]
+            orientation: 'vertical'
+            BackgroundButton:
+                text: 'SATA'
+                on_release: root.recheck_sata()
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_speed
+                text: 'None'
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_sdx
+                text: 'None'
+        BoxLayout:
+            size_hint: [.3, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_rw
+                text: 'None'
+        BoxLayout:
+            size_hint: [.2, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: sata_diff
+                text: 'CMP'
+
+        BoxLayout:
+            size_hint: [.2, .10]
+            orientation: 'vertical'
+            BackgroundButton:
+                text: 'NVME'
+        BoxLayout:
+            size_hint: [.15, .10]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: nvme_speed
+                text: 'None'
+        BoxLayout:
+            size_hint: [.15, .10]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: nvme_sdx
+                text: 'None'
+        BoxLayout:
+            size_hint: [.3, .10]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: nvme_rw
+                text: 'None'
+        BoxLayout:
+            size_hint: [.2, .10]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: nvme_diff
+                text: 'CMP'
+
+
+        BackgroundLabel2:
+            text: 'ETH/MAC'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'PING'
+            id: ping
+            size_hint: [.15, .08]
+        BackgroundLabel:
+            id: eth_speed
+            text: 'None'
+            size_hint: [.15, .08]
+        BackgroundLabel:
+            id: mac 
+            font_size: 25
+            text: 'None'
+            size_hint: [.5, .08]
+
+        BackgroundLabel2:
+            text: 'IPERF'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'None'
+            id: iperf
+            size_hint: [.8, .08]
+
+        BackgroundLabel2:
+            text: 'HP_DET'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'None'
+            id: hp_det 
+            size_hint: [.8, .08]
+
+        BackgroundLabel2:
+            text: 'IR'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'None'
+            id: ir
+            size_hint: [.8, .08]
+
+

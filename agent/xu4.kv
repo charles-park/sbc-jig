@@ -1,0 +1,188 @@
+<Debug>:
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .05]
+        BackgroundLabel2:
+            id: name
+            text: 'CH'
+            size_hint: [.25, 1]
+        BackgroundLabel:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.3, 1]
+        BackgroundLabel:
+            id: uart
+            text: 'UART'
+            size_hint: [.45, 1]
+
+<Channel>:
+    name: name
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .1]
+        BackgroundLabel2:
+            id: name
+            text: 'CH'
+            size_hint: [.2, 1]
+        BackgroundButton:
+            id: onoff
+            text: 'OFF'
+            size_hint: [.3, 1]
+            on_release: root.poweroff()
+        BackgroundLabel:
+            id: uart
+            text: 'UART'
+            size_hint: [.5, 1]
+
+
+    StackLayout:
+        size_hint: [1, .9]
+        orientation: 'lr-tb'
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: [.2, .24]
+            BackgroundLabel2:
+                text: 'MODE'
+            BackgroundLabel2:
+                text: 'USB2'
+            BackgroundLabel2:
+                text: 'USB_FW'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: [.3, .24]
+            BackgroundLabel:
+                id: boot_mode
+                text: 'None'
+            BackgroundLabel:
+                id: usb2
+                text: 'None'
+            BackgroundLabel:
+                id: usb_fw
+                text: 'None'
+        BackgroundLabel2:
+            size_hint: [.5, .24]
+            id: finish
+            font_size: 58
+            text: 'FINISH'
+
+        BackgroundLabel2:
+            text: 'ETC'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'PWR_KEY'
+            id: pwr_key
+            size_hint: [.4, .08]
+        BackgroundLabel:
+            text: 'FAN'
+            id: fan
+            size_hint: [.4, .08]
+
+        BackgroundLabel2:
+            text: 'LED'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            id: led_sys
+            font_size: 25
+            text: 'SYS'
+            size_hint: [.27, .08]
+        BackgroundLabel:
+            id: led_pwr
+            font_size: 25
+            text: 'PWR'
+            size_hint: [.27, .08]
+        BackgroundLabel:
+            id: led_eth
+            font_size: 25
+            text: 'ETH'
+            size_hint: [.26, .08]
+
+        BoxLayout:
+            size_hint: [.2, .16]
+            orientation: 'vertical'
+            BackgroundButton:
+                text: 'USB3'
+                on_release: root.recheck_usb3()
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_sdx
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_sdx
+                text: 'None'
+        BoxLayout:
+            size_hint: [.15, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_speed
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_speed
+                text: 'None'
+        BoxLayout:
+            size_hint: [.5, .16]
+            orientation: 'vertical'
+            BackgroundLabel:
+                id: usb3_up_rw
+                text: 'None'
+            BackgroundLabel:
+                id: usb3_down_rw
+                text: 'None'
+
+        BackgroundLabel2:
+            text: 'GPIO'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            id: gpio
+            font_size: 25
+            text: 'None'
+            size_hint: [.8, .08]
+
+        BackgroundLabel2:
+            text: 'MAC'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            id: mac_addr
+            font_size: 25
+            text: 'None'
+            size_hint: [.8, .08]
+
+        BackgroundLabel2:
+            text: 'ETH'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'PING'
+            id: ping
+            size_hint: [.15, .08]
+        BackgroundLabel:
+            id: eth_speed
+            text: 'None'
+            size_hint: [.15, .08]
+        BackgroundLabel:
+            id: ipaddr
+            font_size: 25
+            text: 'None'
+            size_hint: [.5, .08]
+
+        BackgroundLabel2:
+            text: 'ADC'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'ADC0'
+            id: adc0
+            size_hint: [.4, .08]
+        BackgroundLabel:
+            text: 'ADC3'
+            id: adc3
+            size_hint: [.4, .08]
+	
+        BackgroundLabel2:
+            text: 'HDMI'
+            size_hint: [.2, .08]
+        BackgroundLabel:
+            text: 'None'
+            id: hdmi
+            size_hint: [.8, .08]

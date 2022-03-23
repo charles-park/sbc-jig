@@ -1,0 +1,6 @@
+pyserial-asyncio
+smbus2
+pygame
+colorlog
+aiohttp
+kivy

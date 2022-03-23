@@ -1,0 +1,53 @@
+<BackgroundColor@Widget>
+    background_color: 0, 0, 0, 0
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: .2, .4, .7, .9
+    font_size: 22
+    bold: True
+
+<BackgroundLabel2@Label+BackgroundColor>
+    color: .7, .7, .7, .9
+    background_color: .1, .3, .5, .9
+    font_size: 22
+    bold: True
+
+<BackgroundButton@Button+BackgroundColor>
+    background_color: .2, .4, .7, .9
+    font_size: 22
+    bold: True
+
+<Channel>:
+    orientation: 'vertical'
+    padding: 5
+
+<AgentView>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: [1, .08]
+        BackgroundLabel:
+            id: version
+            text: 'JIG v2.1'
+        BackgroundLabel:
+            id: date
+        BackgroundLabel:
+            id: ipaddr
+            text: '-'
+
+    Carousel:
+        size_hint: [1, .92]
+        BoxLayout:
+            size : root.width, root.height
+            orientation: 'horizontal'
+            Channel:
+                id: ch0
