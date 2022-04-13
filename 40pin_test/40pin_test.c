@@ -125,10 +125,10 @@ static int adcValue2 = 0;
 
 // GPIOX.BIT12(TXD1), GPIOX.BIT13(RXD1)
 // ODROID-M1
-// const char *serialHandleNode = "/dev/ttyS0";
+const char *serialHandleNode = "/dev/ttyS0";
 
 // ODROID-C4
-const char *serialHandleNode = "/dev/ttyS1";
+// const char *serialHandleNode = "/dev/ttyS1";
 
 static int  serialHandle = 0;
 
