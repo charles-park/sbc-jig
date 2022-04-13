@@ -214,6 +214,9 @@ class M1():
                 aef(self.task_scan_iperf_server.run())
             elif label == 'print' and value == 0:
                 await self.finish()
+            elif label == 'mac_rewrite' and value == 0:
+                print ("==> 2022.04.13 mac rewrite added for charles")
+                await aef(self.task_mac.run())
             if cnt_press > 0 and cnt_release > 0 and cnt_eth['green'] > 0:
                 self.okay_item('ir', f"press : {cnt_press}, out : {cnt_release}, eth_green : {cnt_eth['green']}, eth_yellow : {cnt_eth['yellow']}")
             else:

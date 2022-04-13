@@ -48,7 +48,8 @@ class Evtest():
                     yield 'poweroff', event.value
                 elif event.code == evdev.ecodes.KEY_MENU:
                     yield 'scan', event.value
-
+                elif event.code == evdev.ecodes.KEY_MUTE:
+                    yield 'mac_rewrite', event.value
 
 def main():
     loop = asyncio.get_event_loop()

@@ -9,8 +9,8 @@ except ImportError:
 
 class API_MANAGER:
 
-    #def __init__(self, board, server_host=API_SERVER_HOST):
-    def __init__(self, board, server_host=API_TEST_SERVER_HOST):
+    def __init__(self, board, server_host=API_SERVER_HOST):
+    #def __init__(self, board, server_host=API_TEST_SERVER_HOST):
         # Version
         # All of the python files place on the same diectory follows this version
         self.version = '1.3'
