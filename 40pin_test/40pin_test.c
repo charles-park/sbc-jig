@@ -18,10 +18,10 @@
 #include <time.h>
 #include <sys/sysinfo.h>
 
-#include <wiringPi.h>
-#include <wiringPiI2C.h>
-#include <wiringSerial.h>
-#include <lcd.h>
+#include <wiringpi2/wiringPi.h>
+#include <wiringpi2/wiringPiI2C.h>
+#include <wiringpi2/wiringSerial.h>
+#include <wiringpi2/lcd.h>
 
 #ifndef	TRUE
 #  define	TRUE	(1==1)
