@@ -71,6 +71,27 @@ class IperfServer():
                     lines.append(tmp)
                     tmp = error
             '''
+        ''' Charles add : 2022-04-14 for next jig '''
+        if 'left-m' in message:
+            mac = message.split(',')[1]
+            if mac.startswith('001e06'):
+                if len(mac) == 12 and not ':' in mac:
+                    temp = [mac[i:i+2] for i in range(0, len(mac), 2)]
+                    mac = ':'.join(temp)
+                    self.mac_printer.label_print(0, FORUM, mac)
+        if 'left-e' in message:
+            errors = message[7:]
+            self.mac_printer.label_print(0, errors, None, 1)
+        if 'right-m' in message:
+            mac = message.split(',')[1]
+            if mac.startswith('001e06'):
+                if len(mac) == 12 and not ':' in mac:
+                    temp = [mac[i:i+2] for i in range(0, len(mac), 2)]
+                    mac = ':'.join(temp)
+                    self.mac_printer.label_print(1, FORUM, mac)
+        if 'right-e' in message:
+            errors = message[8:]
+            self.mac_printer.label_print(1, errors, None, 1)
 
             #self.mac_printer.label_print(0, lines[0], lines[1])
         writer.close()
