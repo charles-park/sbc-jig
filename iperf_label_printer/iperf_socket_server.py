@@ -94,6 +94,9 @@ class IperfServer():
             self.mac_printer.label_print(1, errors, None, 1)
 
             #self.mac_printer.label_print(0, lines[0], lines[1])
+        if 'version' in message:
+            sbuff = bytes("20220419", encoding='utf-8')
+            writer.write(sbuff)
         writer.close()
 
     async def start_iperf(self):
